@@ -1,0 +1,191 @@
+page {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.view-page {
+  height: 135rpx;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  /* position: absolute; */
+  overflow: hidden;
+  background: linear-gradient(to right,rgb(255,123,25),rgb(255,249,1));
+}
+
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+  color: #fff;
+  font-family: 宋体;
+  font-size: 36rpx;
+  font-weight: bold;
+  top: 70rpx;
+  left: 30rpx;
+}
+
+.title{
+  margin-left: 200rpx
+}
+.fanhui{
+  position: absolute;
+  top: 9rpx;left: 17rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-bottom: 7rpx solid #fff;
+  border-left: 7rpx solid #fff;
+  transform: rotate(45deg);
+}
+.list{
+  margin-bottom: 20rpx;
+  border: 1rpx solid #ddd;
+  display: block;
+  height: 65rpx;
+  line-height: 65rpx;
+  position: relative;
+}
+.biaoti{
+  font-weight: bold;
+  width: 100%;
+  height: 60rpx;
+  position: relative;
+}
+.t1{
+  display: inline-block;
+  width: 22%;
+  text-align: center;
+}
+.t2{
+  display: inline-block;
+  width: 28%;
+  text-align: center;
+}
+.t3{
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+.t4{
+  display: inline-block;
+  width: 25.5%;
+  text-align: center;
+}
+
+  
+
+/* .list9{
+  position: absolute;
+  top: 0rpx;left: 210rpx;
+}
+.list10{
+  position: absolute;
+  top: 0rpx;left: 440rpx;
+}
+.list11{
+  position: absolute;
+  top: 0rpx;left: 630rpx;
+} */
+
+/* 搜索框样式 */
+.search
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  width:85%;
+  margin: 0 auto;
+  height:60rpx;
+  background-color:whitesmoke;
+  margin-top: 4%;
+  margin-bottom: 3%;
+  border:1rpx solid whitesmoke;
+  border-radius: 5rpx;
+  box-shadow: 0rpx 0rpx 15rpx #ccc;
+}
+
+/* 搜索框提示文字样式 */
+.search input
+{
+  width: 79%;
+  font-size:27rpx;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left:30rpx; 
+}
+
+/* 搜索框小图标 */
+.search image
+{ 
+  width:40rpx;
+  height:40rpx;
+  padding-right:20rpx;
+}
+
+
+.body{
+  position: relative;
+}
+/* .list0{
+  position: absolute;
+  top: 75rpx;left: 50rpx;
+}
+.list1{
+  position: absolute;
+  top: 160rpx;left: 50rpx;
+}
+.list2{
+  position: absolute;
+  top: 245rpx;left: 50rpx;
+}
+.list3{
+  position: absolute;
+  top: 330rpx;left: 50rpx;
+}
+.list4{
+  position: absolute;
+  top: 415rpx;left: 50rpx;
+}
+.list5{
+  position: absolute;
+  top: 500rpx;left: 50rpx;
+}
+.list6{
+  position: absolute;
+  top: 585rpx;left: 50rpx;
+}
+.list7{
+  position: absolute;
+  top: 670rpx;left: 50rpx;
+}
+.list8{
+  position: absolute;
+  top: 755rpx;left: 50rpx;
+}    */
+.biaoti{
+  font-weight: bold;
+  width: 100%;
+  height: 60rpx;
+  position: relative;
+}
+.list1{
+  display: inline-block;
+  width: 22%;
+  text-align: center;
+}
+.list2{
+  display: inline-block;
+  width: 28%;
+  text-align: center;
+}
+.list3{
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+.list4{
+  display: inline-block;
+  width: 25.5%;
+  text-align: center;
+}

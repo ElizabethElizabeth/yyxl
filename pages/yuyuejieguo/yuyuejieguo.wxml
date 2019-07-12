@@ -1,0 +1,32 @@
+<view class='view-page'>
+  <view class='page-content' style='height:calc(100vh - {{navH}}px)'>
+    <!--这里放你的内容-->
+    <text bindtap="navBack" class="fanhui"></text>
+    <text class="title">{{pagename}}</text>
+  </view>
+</view>  
+
+
+<view class='tab'>
+  <view>
+    <navigator url="../liancheyuyue/liancheyuyue" class="tab-item">
+    练车预约
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../yuyuejieguo/yuyuejieguo" class="tab-item active">预约结果</navigator>
+  </view>
+</view>
+
+
+<view class="body">
+  <view class="list">
+    <view class="chehao"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>号： </text><text class="chehao1">{{chehao}}</text></view>
+    <view class="chepai"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>牌： </text><text class="chepai1">{{chepai}}</text></view>
+    <view class="jiaolian"><text>教<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>练： </text><text class="jiaolian1">{{jiaolian}}</text></view>
+    <view class="riqi"><text>预约日期：</text><text class="riqi1">{{riqi}}</text></view>
+    <view class="shijian"><text>预约时间：</text><text></text></view>
+    <view class="zhuangtai"><text>预约状态：</text><text class="zhuangtai1">{{zhuangtai}}</text></view>
+  </view>
+  <view class="chenggong">您已成功预约传益行科目二考场练车请按时前来参加训练！</view>
+</view>

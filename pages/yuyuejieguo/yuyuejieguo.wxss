@@ -1,0 +1,101 @@
+page {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.view-page {
+  height: 135rpx;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  /* position: absolute; */
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(255, 123, 25), rgb(255, 249, 1));
+}
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+  color: #fff;
+  font-family: 宋体;
+  font-size: 36rpx;
+  font-weight: bold;
+  top: 70rpx;
+  left: 30rpx;
+}
+.title {
+  margin-left: 200rpx;
+}
+.fanhui {
+  position: absolute;
+  top: 9rpx;
+  left: 17rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-bottom: 7rpx solid #fff;
+  border-left: 7rpx solid #fff;
+  transform: rotate(45deg);
+}
+
+
+.tab{
+  display: flex;
+  font-size: 32rpx;
+  color:#000000;
+  background: #f4f4f4;
+}
+.tab view{
+  width: 49.9%;
+}
+.tab-item{
+  width: 36%;
+  text-align: center;
+  margin: 6% 32%;
+}
+.tab-item.active{
+  color: #ff9115;
+  font-weight: bold;
+  border-bottom: 7rpx solid #ff9115;
+}
+
+
+
+.list{
+  margin-left: 100rpx;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.body{
+  position: relative;
+}
+.chehao1{
+  position: absolute;
+  top: 2rpx;left: 310rpx;
+}
+.chepai1{
+  position: absolute;
+  top: 100rpx;left: 310rpx;
+}
+.jiaolian1{
+  position: absolute;
+  top: 200rpx;left: 310rpx;
+}
+.riqi1{
+  position: absolute;
+  top: 299rpx;left: 310rpx;
+}
+.zhuangtai1{
+  position: absolute;
+  top: 500rpx;left: 310rpx;
+}
+.chehao,.chepai,.jiaolian,.riqi,.shijian,.zhuangtai{
+  margin-bottom: 60rpx;
+}
+.chenggong{
+  position: absolute;
+  top: 630rpx;
+  width: 65%;
+  text-align: center;
+  margin: 0% 17.5%;
+}
