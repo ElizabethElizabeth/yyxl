@@ -11,17 +11,12 @@ Page({
     date: "",
     array: ['8:00-11:00', '11:00-14:00', '14:00-18:00'],
     array1: ['', '', ''],
-    index:"0",
+    index:0,
     yueList: app.globalData.yueList,
     yuePerson: app.globalData.yuePerson,
     zhuangtai:'',
     xiabiao: '',
-    chehao1: '',
-    chehao: 'chehao',
-    chepai1:"",
-    chepai:"chepai",
-    jiaolian1:"",
-    jiaolian:"jiaolian",
+    yue:{},
     multiArray: [['2019', '2020'], ['7', '8', '9', '10', '11'], ['10']],
     multiIndex: [0, 0, 0],
     objectMultiArray: [
@@ -72,21 +67,6 @@ Page({
     this.setData({
       index: e.detail.value
     })
-    console.log(this.data.index);
-   if(this.data.index==0){
-     this.setData({
-       zhuangtai: this.data.yuePerson[0].s
-     })
-   }else if(this.data.index==1){
-     this.setData({
-       zhuangtai: this.data.yuePerson[0].z
-     })
-   }else{
-     this.setData({
-       zhuangtai: this.data.yuePerson[0].x
-     })
-   }
-    
   },
   // bindMultiPickerChange: function (e) {
   //   console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -209,22 +189,13 @@ Page({
     //     //console.log(base64)
     //   }
     // })
+      console.log(option.xiabiao);
       this.setData({
         xiabiao: option.xiabiao,
       })
-      
-      console.log(this.data.xiabiao);
-      console.log(this.data.yueList[this.data.xiabiao]);
-      console.log(this.data.chehao);
-      console.log(this.data.yueList[this.data.xiabiao].chehao);
-      console.log(this.data.yueList[this.data.xiabiao].chepai);
-      console.log(this.data.yueList[this.data.xiabiao].jiaolian);
-      this.setData({
-      chehao1: this.data.yueList[this.data.xiabiao].chehao,
-      chepai1: this.data.yueList[this.data.xiabiao].chepai,
-      jiaolian1: this.data.yueList[this.data.xiabiao].jiaolian
-      })
-      
+      var yue=this.data.yueList.filter(elem=>elem.id==option.xiabiao)[0];
+      console.log(yue);
+      this.setData({yue})      
 
 
     

@@ -11,49 +11,11 @@ Page({
     inputValue: '', //搜索的内容
     // xiabiao: ''
   },
-  yuyuetiaozhuan0: function(){
+  yuyuetiaozhuan: function(e){
+    var id=e.currentTarget.dataset.id;
+    console.log(id);
     wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=0'
-    })
-  },
-  yuyuetiaozhuan1: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=1'
-    })
-  },
-  yuyuetiaozhuan2: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=2'
-    })
-  },
-  yuyuetiaozhuan3: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=3'
-    })
-  },
-  yuyuetiaozhuan4: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=4'
-    })
-  },
-  yuyuetiaozhuan5: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=5'
-    })
-  },
-  yuyuetiaozhuan6: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=6'
-    })
-  },
-  yuyuetiaozhuan7: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=7'
-    })
-  },
-  yuyuetiaozhuan8: function () {
-    wx.navigateTo({
-      url: '../liancheyuyue/liancheyuyue?xiabiao=8'
+      url: `../liancheyuyue/liancheyuyue?xiabiao=${id}`
     })
   },
   //搜索框文本内容显示

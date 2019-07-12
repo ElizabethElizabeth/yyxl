@@ -19,12 +19,12 @@
 
 <view class="body">
   <view class="list">
-    <view class="chehao"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>号： </text><text class="chehao1">{{yueList[xiabiao].chehao}}</text></view>
-    <view class="chepai"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>牌： </text><text class="chepai1">{{yueList[xiabiao].chepai}}</text></view>
-    <view class="jiaolian"><text>教<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>练： </text><text class="jiaolian1">{{yueList[xiabiao].jiaolian}}</text></view>
+    <view class="chehao"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>号： </text><text class="chehao1">{{yue.chehao}}</text></view>
+    <view class="chepai"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>牌： </text><text class="chepai1">{{yue.chepai}}</text></view>
+    <view class="jiaolian"><text>教<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>练： </text><text class="jiaolian1">{{yue.jiaolian}}</text></view>
     <view class="riqi"><text>预约日期：</text></view>
     <view class="shijian"><text>预约时间：</text></view>
-    <view class="zhuangtai"><text>预约状态：</text><text class="zhuangtai1">{{zhuangtai}}</text></view>
+    <view class="zhuangtai"><text>预约状态：</text></view>
   </view>
 
     <picker class="riqi1" mode="date" start="2019-07-11" bindchange="bindDateChange">
@@ -41,7 +41,7 @@
     <!-- <image bindtap="bindPickerChange" src="/img/xiala.png"></image> -->
   
     <view class="zhuangtai1">
-        {{yueList[xiabiao].zhuangtai}}
+        {{yue.status[index].yiyue+"/"+yue.status[index].total}}
     </view> 
   <navigator bindtap="querenyuyue">确认预约</navigator>
 </view>

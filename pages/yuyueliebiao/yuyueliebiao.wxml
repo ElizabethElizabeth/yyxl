@@ -18,60 +18,13 @@
     <text class="t3">教练</text>
     <text class="t4">已约/总数</text>
   </view>
-  <view bindtap="yuyuetiaozhuan0" class="list">
-      <text class="list1">{{yueList[0].chehao}}</text>
-      <text class="list2">{{yueList[0].chepai}}</text>
-      <text class="list3">{{yueList[0].jiaolian}}</text>
-      <text class="list4">{{yueList[0].yiyue}}/{{yueList[0].total}}</text>
+  <view wx:for="{{yueList}}" wx:key="index"  bindtap="yuyuetiaozhuan" data-id="{{item.id}}" class="list">
+      <text class="list1">{{item.chehao}}</text>
+      <text class="list2">{{item.chepai}}</text>
+      <text class="list3">{{item.jiaolian}}</text>
+      <text class="list4">{{item.yiyue}}/{{yueList[index].total}}</text>
   </view>
-   <view bindtap="yuyuetiaozhuan1" class="list">
-      <text class="list1">{{yueList[1].chehao}}</text>
-      <text class="list2">{{yueList[1].chepai}}</text>
-      <text class="list3">{{yueList[1].jiaolian}}</text>
-      <text class="list4">{{yueList[1].yiyue}}/{{yueList[0].total}}</text>
-  </view>
-   <view bindtap="yuyuetiaozhuan2" class="list">
-      <text class="list1">{{yueList[2].chehao}}</text>
-      <text class="list2">{{yueList[2].chepai}}</text>
-      <text class="list3">{{yueList[2].jiaolian}}</text>
-      <text class="list4">{{yueList[2].yiyue}}/{{yueList[0].total}}</text>
-  </view>
-   <view bindtap="yuyuetiaozhuan3" class="list">
-      <text class="list1">{{yueList[3].chehao}}</text>
-      <text class="list2">{{yueList[3].chepai}}</text>
-      <text class="list3">{{yueList[3].jiaolian}}</text>
-      <text class="list4">{{yueList[3].yiyue}}/{{yueList[0].total}}</text>
-  </view>
-   <view bindtap="yuyuetiaozhuan4" class="list">
-      <text class="list1">{{yueList[4].chehao}}</text>
-      <text class="list2">{{yueList[4].chepai}}</text>
-      <text class="list3">{{yueList[4].jiaolian}}</text>
-      <text class="list4">{{yueList[4].yiyue}}/{{yueList[0].total}}</text>
-  </view>
-   <view bindtap="yuyuetiaozhuan5" class="list">
-      <text class="list1">{{yueList[5].chehao}}</text>
-      <text class="list2">{{yueList[5].chepai}}</text>
-      <text class="list3">{{yueList[5].jiaolian}}</text>
-      <text class="list4">{{yueList[5].yiyue}}/{{yueList[0].total}}</text>
-  </view>
-   <view bindtap="yuyuetiaozhuan6" class="list">
-      <text class="list1">{{yueList[6].chehao}}</text>
-      <text class="list2">{{yueList[6].chepai}}</text>
-      <text class="list3">{{yueList[6].jiaolian}}</text>
-      <text class="list4">{{yueList[6].yiyue}}/{{yueList[0].total}}</text>
-  </view>
-   <view bindtap="yuyuetiaozhuan7" class="list">
-      <text class="list1">{{yueList[7].chehao}}</text>
-      <text class="list2">{{yueList[7].chepai}}</text>
-      <text class="list3">{{yueList[7].jiaolian}}</text>
-      <text class="list4">{{yueList[7].yiyue}}/{{yueList[0].total}}</text>
-  </view>
-   <view bindtap="yuyuetiaozhuan8" class="list">
-      <text class="list1">{{yueList[8].chehao}}</text>
-      <text class="list2">{{yueList[8].chepai}}</text>
-      <text class="list3">{{yueList[8].jiaolian}}</text>
-      <text class="list4">{{yueList[8].yiyue}}/{{yueList[0].total}}</text>
-  </view>
+   
   <!-- <navigator url="../liancheyuyue/liancheyuyue?xiabiao=0" bindtap="yuyuetiaozhuan0" class="list0">{{yueList[0].chehao}}</navigator>
   <navigator url="../liancheyuyue/liancheyuyue?xiabiao=1" bindtap="yuyuetiaozhuan1" class="list1">{{yueList[1].chehao}}</navigator>
   <navigator url="../liancheyuyue/liancheyuyue?xiabiao=2" bindtap="yuyuetiaozhuan2" class="list2">{{yueList[2].chehao}}</navigator>

@@ -36,15 +36,15 @@ App({
   globalData: {
     userInfo: null,
     yueList: [
-      { "chehao": "1号车", "chepai": "陕A12345", "jiaolian": "李教练", "total": "10", "yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "2号车", "chepai": "陕A12345", "jiaolian": "张教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "3号车", "chepai": "陕A12345", "jiaolian": "赵教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "4号车", "chepai": "陕A12345", "jiaolian": "钱教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "5号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "6号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "7号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "8号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
-      { "chehao": "9号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": "10" ,"yiyue": "0", "tatal1": "3", "yiyue1": "0", "total2": "3", "yiyue2": "0", "tatal3": "4", "yiyue3": "0"},
+      { "id": 1, "chehao": "1号车", "chepai": "陕A12345", "jiaolian": "李教练", "status": [{ "total": 4, "yiyue": 2 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 2 }]},
+      { "id": 2, "chehao": "2号车", "chepai": "陕A12345", "jiaolian": "张教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 3, "chehao": "3号车", "chepai": "陕A12345", "jiaolian": "赵教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 4, "chehao": "4号车", "chepai": "陕A12345", "jiaolian": "钱教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 5, "chehao": "5号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 6, "chehao": "6号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 7, "chehao": "7号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 8, "chehao": "8号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 9, "chehao": "9号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
     ],
     yuePerson: [
       {
