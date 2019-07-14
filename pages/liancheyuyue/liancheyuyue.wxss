@@ -82,7 +82,7 @@ page {
 }
 .riqi1{
   position: absolute;
-  top: 297rpx;left: 310rpx;
+  top: 301rpx;left: 310rpx;
   border: 1rpx solid #aaa;
   border-radius: 7rpx;
   width: 275rpx;
@@ -94,10 +94,10 @@ page {
 }
 .shijian1{
   position: absolute;
-  top: 395rpx;left: 310rpx;
+  top: 400rpx;left: 310rpx;
   border: 1rpx solid #aaa;
   border-radius: 7rpx;
-  width: 220rpx;
+  width: 250rpx;
   height: 55rpx;
   line-height: 55rpx;
   padding-left: 10rpx;
@@ -106,7 +106,7 @@ page {
 }
 .zhuangtai1{
   position: absolute;
-  top: 490rpx;left: 310rpx;
+  top: 509rpx;left: 310rpx;
 }
 .chehao1{
   position: absolute;
@@ -114,14 +114,15 @@ page {
 }
 .chepai1{
   position: absolute;
-  top: 100rpx;left: 310rpx;
+  top: 102rpx;left: 310rpx;
 }
 .jiaolian1{
   position: absolute;
-  top: 200rpx;left: 310rpx;
+  top: 203rpx;left: 310rpx;
 }
 .chehao,.chepai,.jiaolian,.riqi,.shijian,.zhuangtai{
-  margin-bottom: 60rpx;
+  margin-bottom: 40rpx;
+  height: 62rpx;
 }
 
 

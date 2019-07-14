@@ -1,15 +1,27 @@
 //app.js
-App({
+App({   
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+       wx.setStorageSync('logs', logs)    
 
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        var code = res.code;
+        if (code)   {
+          console.log('获取用户登录凭证：' + code);
+
+          // --------- 发送凭证 ------------------
+          wx.request({
+            url: 'https://www.my-domain.com/wx/onlogin',
+            data: { code: code }
+          })
+          } else {
+            console.log('获取用户登录态失败：' + res.errMsg);
+          }
       }
     })
     // 获取用户信息
@@ -36,22 +48,16 @@ App({
   globalData: {
     userInfo: null,
     yueList: [
-      { "id": 1, "chehao": "1号车", "chepai": "陕A12345", "jiaolian": "李教练", "status": [{ "total": 4, "yiyue": 2 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 2 }]},
-      { "id": 2, "chehao": "2号车", "chepai": "陕A12345", "jiaolian": "张教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
-      { "id": 3, "chehao": "3号车", "chepai": "陕A12345", "jiaolian": "赵教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
-      { "id": 4, "chehao": "4号车", "chepai": "陕A12345", "jiaolian": "钱教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
-      { "id": 5, "chehao": "5号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
-      { "id": 6, "chehao": "6号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
-      { "id": 7, "chehao": "7号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
-      { "id": 8, "chehao": "8号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
-      { "id": 9, "chehao": "9号车", "chepai": "陕A12345", "jiaolian": "何教练", "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 1, "chehao": "1号车", "chepai": "陕A12345", "jiaolian": "李教练", "total": 10, "yiyue": 5, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"], "status": [{ "total": 4, "yiyue": 2 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 2 }]},
+      { "id": 2, "chehao": "2号车", "chepai": "陕A12345", "jiaolian": "张教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"], "status": [{ "total": 4, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 3, "chehao": "3号车", "chepai": "陕A12345", "jiaolian": "赵教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"],"status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 4, "chehao": "4号车", "chepai": "陕A12345", "jiaolian": "钱教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"],"status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 5, "chehao": "5号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"],"status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 6, "chehao": "6号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"],"status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 7, "chehao": "7号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"], "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 8, "chehao": "8号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"],"status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
+      { "id": 9, "chehao": "9号车", "chepai": "陕A12345", "jiaolian": "何教练", "total": 10, "yiyue": 0, "shijian":["8:00-11:00","11:00-14:00","14:00-18:00"], "status": [{ "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},
     ],
-    yuePerson: [
-      {
-        "s":"1/3",
-        "z":"1/3",
-        "x":"1/4"
-      }
-    ]
+   
   }
 })

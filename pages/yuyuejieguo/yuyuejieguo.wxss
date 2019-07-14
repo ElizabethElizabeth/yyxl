@@ -75,22 +75,27 @@ page {
 }
 .chepai1{
   position: absolute;
-  top: 100rpx;left: 310rpx;
+  top: 102rpx;left: 310rpx;
 }
 .jiaolian1{
   position: absolute;
-  top: 200rpx;left: 310rpx;
+  top: 203rpx;left: 310rpx;
 }
 .riqi1{
   position: absolute;
-  top: 299rpx;left: 310rpx;
+  top: 301rpx;left: 310rpx;
+}
+.shijian1{
+  position: absolute;
+  top: 400rpx;left: 310rpx;
 }
 .zhuangtai1{
   position: absolute;
-  top: 500rpx;left: 310rpx;
+  top: 509rpx;left: 310rpx;
 }
 .chehao,.chepai,.jiaolian,.riqi,.shijian,.zhuangtai{
-  margin-bottom: 60rpx;
+  margin-bottom: 40rpx;
+  height: 62rpx;
 }
 .chenggong{
   position: absolute;

@@ -9,7 +9,6 @@ Page({
     pagename: "传益行科目二考场",
     yueList: app.globalData.yueList,
     inputValue: '', //搜索的内容
-    // xiabiao: ''
   },
   yuyuetiaozhuan: function(e){
     var id=e.currentTarget.dataset.id;

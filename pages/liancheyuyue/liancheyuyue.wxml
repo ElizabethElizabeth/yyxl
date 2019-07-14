@@ -30,18 +30,12 @@
     <picker class="riqi1" mode="date" start="2019-07-11" bindchange="bindDateChange">
       {{date}}
     </picker>
-    <!-- <image bindtap="bindPickerChange" src="/img/xiala.png"></image> -->
-    <!-- <picker class="riqi1" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-      {{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}-{{multiArray[2][multiIndex[2]]}}
-  </picker> -->
-  
     <picker class="shijian1" mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
         {{array[index]}}
     </picker>
-    <!-- <image bindtap="bindPickerChange" src="/img/xiala.png"></image> -->
   
     <view class="zhuangtai1">
-        {{yue.status[index].yiyue+"/"+yue.status[index].total}}
+        {{yue.status[index].yiyue}}/{{yue.status[index].total}}
     </view> 
   <navigator bindtap="querenyuyue">确认预约</navigator>
 </view>

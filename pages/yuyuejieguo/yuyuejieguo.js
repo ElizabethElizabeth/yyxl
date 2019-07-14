@@ -11,6 +11,7 @@ Page({
     chepai:"",
     jiaolian:"",
     zhuangtai:"",
+    shijian:"",
     riqi:""
   },
   //回退
@@ -28,7 +29,8 @@ Page({
       chepai: option.chepai,
       jiaolian: option.jiaolian,
       zhuangtai: option.zhuangtai,
-      riqi: option.riqi
+      riqi: option.riqi,
+      shijian: option.shijian
     })
     
   },

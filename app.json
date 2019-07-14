@@ -9,8 +9,7 @@
     "pages/yuyuejieguo/yuyuejieguo",
     "pages/liancheyuyue/liancheyuyue",
     "pages/home/home",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
