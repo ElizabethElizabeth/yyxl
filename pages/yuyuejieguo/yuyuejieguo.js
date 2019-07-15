@@ -1,4 +1,4 @@
-// pages/yuyuejieguo/yuyuejieguo.js
+
 const app = getApp();
 Page({
 

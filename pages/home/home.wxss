@@ -1,34 +1,10 @@
-/* .tab{
-  display: flex;
-  font-size: 32rpx;
-  overflow-y: scroll;
-  white-space: nowrap; 
-  padding: 20rpx 0rpx 10rpx 0px;
-}
-.tab-item{
-  height: 100%;
-  color:#000000;
-  margin: 0rpx 33rpx 0rpx 18rpx;
-  padding: 0rpx 0rpx 3rpx 0rpx;
-}
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  color: transparent;
-}
-navigator.active{
-  color: #ff9115;
-  font-weight: bold;
-  border-bottom: 7rpx solid #ff9115;
-} */
+
 .details{
   padding: 20rpx 20rpx 6rpx 20rpx;
   font-family: 楷体;
   font-size: 23rpx;
 }
-/* .details text{
-  text-align: center;
-} */
+
 .detailsImg{
   display: flex;
   justify-content: space-between;

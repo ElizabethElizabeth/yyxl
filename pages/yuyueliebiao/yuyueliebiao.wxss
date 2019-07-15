@@ -75,18 +75,6 @@ page {
 
   
 
-/* .list9{
-  position: absolute;
-  top: 0rpx;left: 210rpx;
-}
-.list10{
-  position: absolute;
-  top: 0rpx;left: 440rpx;
-}
-.list11{
-  position: absolute;
-  top: 0rpx;left: 630rpx;
-} */
 
 /* 搜索框样式 */
 .search
@@ -127,42 +115,7 @@ page {
 .body{
   position: relative;
 }
-/* .list0{
-  position: absolute;
-  top: 75rpx;left: 50rpx;
-}
-.list1{
-  position: absolute;
-  top: 160rpx;left: 50rpx;
-}
-.list2{
-  position: absolute;
-  top: 245rpx;left: 50rpx;
-}
-.list3{
-  position: absolute;
-  top: 330rpx;left: 50rpx;
-}
-.list4{
-  position: absolute;
-  top: 415rpx;left: 50rpx;
-}
-.list5{
-  position: absolute;
-  top: 500rpx;left: 50rpx;
-}
-.list6{
-  position: absolute;
-  top: 585rpx;left: 50rpx;
-}
-.list7{
-  position: absolute;
-  top: 670rpx;left: 50rpx;
-}
-.list8{
-  position: absolute;
-  top: 755rpx;left: 50rpx;
-}    */
+
 .biaoti{
   font-weight: bold;
   width: 100%;

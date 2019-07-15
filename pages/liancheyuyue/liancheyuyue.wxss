@@ -9,7 +9,6 @@ page {
   left: 0;
   top: 0;
   box-sizing: border-box;
-  /* position: absolute; */
   overflow: hidden;
   background: linear-gradient(to right, rgb(255, 123, 25), rgb(255, 249, 1));
 }
