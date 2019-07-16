@@ -1,0 +1,61 @@
+page {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.view-page {
+  height: 135rpx;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(255, 123, 25), rgb(255, 249, 1));
+}
+.page-content {
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+  color: #fff;
+  font-family: 宋体;
+  font-size: 36rpx;
+  font-weight: bold;
+  top: 70rpx;
+  left: 30rpx;
+}
+.title {
+  margin-left: 275rpx;
+}
+.fanhui {
+  position: absolute;
+  top: 9rpx;
+  left: 17rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-bottom: 7rpx solid #fff;
+  border-left: 7rpx solid #fff;
+  transform: rotate(45deg);
+}
+
+.form{
+  display: block;
+  width: 84%;
+  margin: 30rpx auto;
+}
+.zhuce{
+  background: linear-gradient(to right, rgb(255, 123, 25), rgb(255, 249, 1));
+  color: #fff;
+  font-weight: bold;
+  margin-top: 400rpx;
+}
+.biaoti{
+  margin-bottom: 30rpx;
+  font-weight: 500;
+  font-size: 35rpx;
+}
+.section{
+  margin-bottom: 15rpx;
+  padding: 15rpx 25rpx;
+  border: 1rpx solid #999;
+  border-radius: 15rpx;
+}

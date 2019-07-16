@@ -14,7 +14,8 @@ Page({
     zhuangtai:'',
     xiabiao: '',
     yue:{},
-    array: []
+    array: ["8:00-11:00", "11:00-14:00", "14:00-18:00"],
+    carList: [{},{}]
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -58,15 +59,17 @@ Page({
     //   }
     // })
       console.log(option.xiabiao);
+      console.log(option.carList)
       this.setData({
         xiabiao: option.xiabiao,
+        carList: option.carList
       })
-      var yue=this.data.yueList.filter(elem=>elem.id==option.xiabiao)[0];
+      var yue=this.data.carList.filter(elem=>elem.id==option.xiabiao)[0];
       console.log(yue);
       this.setData({yue});
-      this.setData({
-        array: this.data.yue.shijian
-      })    
+      // this.setData({
+      //   array: this.data.yue.shijian
+      // })    
    
   },
   querenyuyue: function () {
@@ -74,7 +77,7 @@ Page({
       zhuangtai: this.data.yue.status[this.data.index].yiyue+"/"+this.data.yue.status[this.data.index].total
     })
     wx.navigateTo({
-      url: '../yuyuejieguo/yuyuejieguo?chehao=' + this.data.yue.chehao + "&chepai=" + this.data.yue.chepai + "&jiaolian=" + this.data.yue.jiaolian+"&zhuangtai="+this.data.zhuangtai+"&riqi="+this.data.date+"&shijian="+this.data.array[this.data.index]
+      url: '../yuyuejieguo/yuyuejieguo?chehao=' + this.data.yue.chehao + "&chepai=" + this.data.yue.chepai + "&jiaolian=" + this.data.yue.jiaolian + "&riqi=" + this.data.date + "&shijian=" + this.data.array[this.data.index] + "&zhuangtai=" + this.data.zhuangtai
     })
   },
   /**

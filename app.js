@@ -16,7 +16,7 @@ App({
 
           // --------- 发送凭证 ------------------
           wx.request({
-            url: 'http://c.16ylj.com',
+            url: 'https://c.16ylj.com/api/User/login.html',
             data: { code: code }
           })
           } else {

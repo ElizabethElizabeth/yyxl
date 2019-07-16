@@ -2,9 +2,13 @@
   "pages": [
     "pages/yuyueliebiao/yuyueliebiao",
     "pages/yuyuejieguo/yuyuejieguo",
+    "pages/zhuce/zhuce",
+    
+    "pages/index/index",
+    
     "pages/liancheyuyue/liancheyuyue",
-    "pages/home/home",
-    "pages/index/index"
+    "pages/home/home"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -6,11 +6,16 @@
   </view>
 </view>
 
-<view class='search'>
-  <input type='text' placeholder='请输入您要查询的日期 例如：2019.7.8' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
-  <image class="" src='/img/sousuo.png' bindtap='query'></image>
+<!-- <view class='search'>
+  <input type='text' placeholder='请输入您要查询的日期 例如：2019-7-8' confirm-type='search' value="{{inputValue}}"  bindinput="bindKeyInput" ></input>
+  <view bindtap='souSuo' class="searchImg"><image src='/img/sousuo.png'></image></view>
+</view> -->
+<view class='sousuokuang' bindchange="bindDateChange">
+  <text class='s1'></text>
+  <picker class="s2" mode="date" start="2019-07-11" bindchange="bindDateChange">
+    {{date}}
+  </picker>
 </view>
-
 <view class="body">
   <view class="biaoti">
     <text class="t1">车号</text>
@@ -18,10 +23,10 @@
     <text class="t3">教练</text>
     <text class="t4">已约/总数</text>
   </view>
-  <view wx:for="{{yueList}}" wx:key="index"  bindtap="yuyuetiaozhuan" data-id="{{item.id}}" class="list">
-      <text class="list1">{{item.chehao}}</text>
-      <text class="list2">{{item.chepai}}</text>
-      <text class="list3">{{item.jiaolian}}</text>
-      <text class="list4">{{item.yiyue}}/{{item.total}}</text>
+  <view wx:for="{{carList}}" wx:key="index"  bindtap="yuyuetiaozhuan" data-id="{{item.id}}" class="list">
+      <text class="list1">{{item.car_name}}</text>
+      <text class="list2">{{item.car_code}}</text>
+      <text class="list3">{{item.coach}}</text>
+      <text class="list4">{{item.c_num}}/{{item.t_num}}</text>
   </view>
 </view>
