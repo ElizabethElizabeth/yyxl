@@ -1,5 +1,6 @@
 // pages/liancheyuyue/liancheyuyue.js
 const app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -10,18 +11,17 @@ Page({
     yueList: app.globalData.yueList,
     carList:[],
     inputValue: '', // 搜索的内容
+    date: ""
   },
-  bindKeyInput: function (e) {
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      inputValue: e.detail.value
+      date: e.detail.value
     })
-  },
-  souSuo: function () {
-    console.log("haha");
     var that = this;
-    console.log(this.data.inputValue);
+    console.log(this.data.date);
     wx.request({
-      url: 'http://c.16ylj.com/api/User/carList.html?date='+this.data.inputValue,//请求地址
+      url: 'http://c.16ylj.com/api/User/carList.html?date=' + this.data.date,//请求地址
       header: {
         "Content-Type": "applciation/json"
       },
@@ -33,10 +33,18 @@ Page({
         })
       },
       fail: function (err) {
-        
+
       }
     })
   },
+  
+  bindKeyInput: function (e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
+    
+  },
+  
 
   yuyuetiaozhuan: function(e){
     var id=e.currentTarget.dataset.id;
@@ -53,6 +61,10 @@ Page({
    */
   onLoad: function (options) {
     this.getData();
+    var DATE = util.formatDate(new Date());
+    this.setData({
+      date: DATE,
+    });
   },
   getData: function () {
     var that = this;

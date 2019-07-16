@@ -6,16 +6,12 @@
   </view>
 </view>
 
-<!-- <view class='search'>
-  <input type='text' placeholder='请输入您要查询的日期 例如：2019-7-8' confirm-type='search' value="{{inputValue}}"  bindinput="bindKeyInput" ></input>
-  <view bindtap='souSuo' class="searchImg"><image src='/img/sousuo.png'></image></view>
-</view> -->
-<view class='sousuokuang' bindchange="bindDateChange">
-  <text class='s1'></text>
-  <picker class="s2" mode="date" start="2019-07-11" bindchange="bindDateChange">
-    {{date}}
+
+  <picker class="sousuokuang" mode="date" start="2019-07-11" bindchange="bindDateChange">
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>请输入您要查询的日期<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>{{date}}
   </picker>
-</view>
+
+  
 <view class="body">
   <view class="biaoti">
     <text class="t1">车号</text>
