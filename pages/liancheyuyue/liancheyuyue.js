@@ -9,31 +9,122 @@ Page({
   data: {
     pagename: "传益行科目二考场",
     date: "",
-    index:0,
-    yueList: app.globalData.yueList,
-    zhuangtai:'',
-    xiabiao: '',
-    yue:{},
     array: ["8:00-11:00", "11:00-14:00", "14:00-18:00"],
-    carList: [{},{}]
+    index:0,
+    index1:0,
+    carList: [],
+    zhuangtai:'',
+    car_id: '',
+    car_code:"",
+    coach: "",
+    c_num: "",
+    t_num: ""
+   
+    
+    // yueList: app.globalData.yueList,
+    // yue:{},
   },
+  
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
-  },
-  
-  //回退
-  navBack: function () {
-    wx.navigateBack({
-      delta: 1
+    var kssj = this.data.array[this.data.index].slice(0, 4);
+    var that=this;
+    wx.request({
+      url: 'https://c.16ylj.com/api/User/c_detail.html?date=' + this.data.date + "&car_id=" + this.data.car_id + "&time=" + `${kssj}`,
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log("时间段改变，重新请求")
+        console.log(res.data)
+        that.setData({
+          car_code: res.data.datas.detail.car_code,
+          coach: res.data.datas.detail.coach,
+          c_num: res.data.datas.detail.c_num,
+          t_num: res.data.datas.detail.t_num
+        }) 
+      }
     })
   },
+  bindPickerChange1: function(e){
+    console.log("picker发送选择改变，携带值为",e.detail.value)
+    this.setData({
+      index1:e.detail.value,
+      car_id:this.data.carList[this.data.index1].car_id
+    })
+    var kssj = this.data.array[this.data.index].slice(0, 4);
+    var that = this;
+    // 车号改变，重新渲染页面
+    wx.request({
+      url: 'https://c.16ylj.com/api/User/c_detail.html?date=' + this.data.date + "&car_id=" + this.data.car_id + "&time=" + `${kssj}`,
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log("车号发生改变，重新请求")
+        console.log(res.data)
+        that.setData({
+          car_code: res.data.datas.detail.car_code,
+          coach: res.data.datas.detail.coach,
+          c_num: res.data.datas.detail.c_num,
+          t_num: res.data.datas.detail.t_num
+        })
+      }
+    })
+  },
+  
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
+    })
+    
+    var that=this;
+    wx.request({
+      url: 'http://c.16ylj.com/api/User/carList.html?date=' + this.data.date,//请求地址
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          carList: res.data.datas.carList
+        })
+      },
+      fail: function (err) {
+
+      }
+    })
+    var kssj = this.data.array[this.data.index].slice(0, 4);
+    wx.request({
+      url: 'https://c.16ylj.com/api/User/c_detail.html?date=' + this.data.date + "&car_id=" + this.data.car_id + "&time=" + `${kssj}`,
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log("日期发生改变，重新发送请求")
+        console.log(res.data)
+        that.setData({
+          car_code: res.data.datas.detail.car_code,
+          coach: res.data.datas.detail.coach,
+          c_num: res.data.datas.detail.c_num,
+          t_num: res.data.datas.detail.t_num
+        })
+      }
+    })
+  },
+
+  //回退
+  navBack: function () {
+    wx.navigateBack({
+      delta: 1
     })
   },
   /**
@@ -41,10 +132,50 @@ Page({
    */
   
   onLoad: function (option,e) {
-    var DATE = util.formatDate(new Date());
+    console.log(option.car_id, option.date,option.car_id-1);
     this.setData({
-      date: DATE,   
-    });
+      car_id: option.car_id,
+      date: option.date,
+      index1: option.car_id-1
+    })
+    var that = this;
+    // 从后台获取数组来渲染车号的下拉框
+    wx.request({
+      url: 'http://c.16ylj.com/api/User/carList.html?date='+this.data.date,//请求地址
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          carList: res.data.datas.carList
+        })
+      },
+      fail: function (err) {
+
+      }
+    })
+    
+    
+    // wx.request({
+    //   url: 'http://c.16ylj.com/api/User/c_detail.html',//请求地址
+    //   header: {
+    //     "Content-Type": "applciation/json"
+    //   },
+    //   method: 'GET',
+    //   success: function (res) {
+    //     console.log(res.data)
+        
+    //   },
+    //   fail: function (err) {
+
+    //   }
+    // })
+    // var DATE = util.formatDate(new Date());
+    // this.setData({
+    //   date: DATE,   
+    // });
     
     // base64转换
     // wx.chooseImage({
@@ -58,15 +189,10 @@ Page({
     //     })
     //   }
     // })
-      console.log(option.xiabiao);
-      console.log(option.carList)
-      this.setData({
-        xiabiao: option.xiabiao,
-        carList: option.carList
-      })
-      var yue=this.data.carList.filter(elem=>elem.id==option.xiabiao)[0];
-      console.log(yue);
-      this.setData({yue});
+    
+      // var yue=app.globalData.carList.filter(elem=>elem.id==option.id)[0];
+      // console.log(yue);
+      // this.setData({yue});
       // this.setData({
       //   array: this.data.yue.shijian
       // })    
@@ -91,7 +217,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that=this;
+    var kssj = this.data.array[this.data.index].slice(0, 4);
+   console.log(this.data.date, this.data.car_id, kssj)
+    wx.request({
+      url: 'https://c.16ylj.com/api/User/c_detail.html?date=' + this.data.date+"&car_id="+this.data.car_id+"&time="+`${kssj}`,
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          car_code: res.data.datas.detail.car_code,
+          coach:res.data.datas.detail.coach,
+          c_num: res.data.datas.detail.c_num,
+          t_num: res.data.datas.detail.t_num
+        })
+      },
+      fail: function (err) {
 
+      }
+    })
   },
 
   /**

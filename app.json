@@ -1,13 +1,11 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/yuyueliebiao/yuyueliebiao",
-    "pages/yuyuejieguo/yuyuejieguo",
     "pages/zhuce/zhuce",
-    
+    "pages/yuyuejieguo/yuyuejieguo",
     "pages/index/index",
-    
-    "pages/liancheyuyue/liancheyuyue",
-    "pages/home/home"
+    "pages/liancheyuyue/liancheyuyue"
     
   ],
   "window": {

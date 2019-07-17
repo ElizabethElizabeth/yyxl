@@ -1,16 +1,15 @@
 <view class='view-page'>
   <view class='page-content' style='height:calc(100vh - {{navH}}px)'>
     <!--这里放你的内容-->
-    <text bindtap="navBack" class="fanhui"></text>
     <text class="title">{{pagename}}</text>
   </view>
 </view>  
 
 
-<form class='form' bindsubmit="formSubmit">
+<view class='ziliao'>
   <view class='biaoti'>资料填写：</view>
-  <view class='section'><input placeholder='姓名'></input></view>
-  <view class='section'><input type='idcard' maxlength="18" placeholder='身份证号码'></input></view>
-  <view class='section'><input placeholder='所属驾校'></input></view>
-  <button class='zhuce' form-type="submit">注册</button>
-</form>
+  <!-- <view class='section'><input placeholder='姓名'></input></view> -->
+  <view class='section'><input bindinput="bindKeyInput" type='idcard' maxlength="18" placeholder='身份证号码'></input></view>
+  <!-- <view class='section'><input placeholder='所属驾校'></input></view> -->
+  <button bindtap='zhuce' class='zhuce'>注册</button>
+</view>

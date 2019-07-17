@@ -103,6 +103,18 @@ page {
   background:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAt0lEQVQ4T2NkoBAwUqifgXIDtLS0JjAxMemT45J///5dZNTQ0FBgYWG5ADSAn0RDPv7588cA7AVNTc0AZmbm9aQY8Pfv38Dr169vgIcB1Cv5xBgCdPrEa9euFYDUogSitrb2BUZGRrzh8f///4tXr141gFmEYgAR4QH2940bNx5gNYBQeMD8jexNrOkAW3gg+5ugASAFyOGB7m+iDEAKDwZ0fxNlACw8QDQovnFFL+V5gZiEg08NADlfT7eOlQZoAAAAAElFTkSuQmCC") no-repeat;
   background-position: 91%;
 }
+.chehao1{
+  position: absolute;
+  top: 99rpx;left: 310rpx;
+  border: 1rpx solid #aaa;
+  border-radius: 7rpx;
+  width: 150rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  padding-left: 10rpx;
+  background:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAt0lEQVQ4T2NkoBAwUqifgXIDtLS0JjAxMemT45J///5dZNTQ0FBgYWG5ADSAn0RDPv7588cA7AVNTc0AZmbm9aQY8Pfv38Dr169vgIcB1Cv5xBgCdPrEa9euFYDUogSitrb2BUZGRrzh8f///4tXr141gFmEYgAR4QH2940bNx5gNYBQeMD8jexNrOkAW3gg+5ugASAFyOGB7m+iDEAKDwZ0fxNlACw8QDQovnFFL+V5gZiEg08NADlfT7eOlQZoAAAAAElFTkSuQmCC") no-repeat;
+  background-position: 80%;
+}
 .zhuangtai1{
   position: absolute;
   top: 509rpx;left: 310rpx;

@@ -29,7 +29,7 @@ page {
 .title{
   margin-left: 200rpx
 }
-.fanhui{
+/* .fanhui{
   position: absolute;
   top: 9rpx;left: 17rpx;
   width: 20rpx;
@@ -37,7 +37,7 @@ page {
   border-bottom: 7rpx solid #fff;
   border-left: 7rpx solid #fff;
   transform: rotate(45deg);
-}
+} */
 .list{
   margin-bottom: 20rpx;
   border: 1rpx solid #ddd;
@@ -125,4 +125,7 @@ page {
   display: inline-block;
   width: 25.5%;
   text-align: center;
+}
+.qing{
+  color: #ccc;
 }

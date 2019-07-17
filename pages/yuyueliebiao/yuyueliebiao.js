@@ -8,7 +8,6 @@ Page({
    */
   data: {
     pagename: "传益行科目二考场",
-    yueList: app.globalData.yueList,
     carList:[],
     inputValue: '', // 搜索的内容
     date: ""
@@ -31,28 +30,51 @@ Page({
         that.setData({
           carList: res.data.datas.carList
         })
+        if(res.data.datas.carList==null){
+          wx.showModal({
+            content: '日期选择错误，只能选择明天或明天以后的课程',
+            showCancel: false,
+            success: function (res) {
+
+            }
+          })
+          that.setData({
+            carList: null
+          })
+        }else if(res.data.datas.carList.length==0){
+          wx.showModal({
+            content: '暂无课程安排',
+            showCancel: false,
+            success: function (res) {
+
+            }
+          })
+        }
       },
       fail: function (err) {
 
       }
     })
   },
-  
   bindKeyInput: function (e) {
     this.setData({
       inputValue: e.detail.value
-    })
-    
+    })  
   },
   
-
   yuyuetiaozhuan: function(e){
-    var id=e.currentTarget.dataset.id;
-    var carList=this.data.carList;
-    console.log(id);
-    console.log(carList)
+    var car_id=e.currentTarget.dataset.car_id;
+    var date=this.data.date;
+    if(date==""){
+      console.log("设置为当天的第二天")
+      var date = this.data.carList.filter(elem => elem.car_id == car_id)[0].start_time;
+    }
+    date = date.slice(0, 10);
+    console.log(date);
+    console.log(car_id);
+  
     wx.navigateTo({
-      url: `../liancheyuyue/liancheyuyue?xiabiao=${id}&carList=${carList}`
+      url: `../liancheyuyue/liancheyuyue?car_id=${car_id}&date=${date}`
     })
   },
 
@@ -61,10 +83,10 @@ Page({
    */
   onLoad: function (options) {
     this.getData();
-    var DATE = util.formatDate(new Date());
-    this.setData({
-      date: DATE,
-    });
+    // var DATE = util.formatDate(new Date());
+    // this.setData({
+    //   dateStart: DATE,
+    // });
   },
   getData: function () {
     var that = this;

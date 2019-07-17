@@ -14,11 +14,45 @@ App({
         if (code) {
           console.log('获取用户登录凭证：' + code);
 
-          // --------- 发送凭证 ------------------
-          wx.request({
-            url: 'https://c.16ylj.com/api/User/login.html',
-            data: { code: code }
-          })
+            // --------- 发送凭证 ------------------
+            wx.request({
+              url: 'https://c.16ylj.com/api/User/login.html?code='+code,
+              data: { code: code },
+              header: {
+               'content-type': 'application/json' 
+              },
+              success: (res) => {                
+                console.log(res.data)
+                let key=res.data.datas.key;
+                if(res.data.datas.is_user==0){
+                  wx.showModal({
+                    content: '还未注册,请先前往注册',
+                    showCancel: false,
+                    success: function (res) {
+                      wx.redirectTo({
+                        url: '/pages/zhuce/zhuce?key='+key,
+                      })
+                    }
+                  })
+                  
+                }else{
+                  console.log("登录成功，保存user_id后跳转")
+                  // 将user_id保存在本地
+                  var user_id = res.data.datas.user_id;
+                  console.log(user_id);
+                  wx.setStorage({
+                    key: 'yonghu',
+                    data: user_id,      
+                    success: function (res) {
+                      wx.reLaunch({
+                        url: '/pages/home/home',
+                      })
+                    }
+                  })
+
+                }
+              }            
+            })
           } else {
             console.log('获取用户登录态失败：' + res.errMsg);
           }
@@ -47,6 +81,8 @@ App({
   },
   globalData: {
     userInfo: null,
+    carList:[],
+    is_user:'',
     yueList: [
       { "id": 1, "chehao": "1号车", "chepai": "陕A12345", "jiaolian": "李教练", "total": 10, "yiyue": 5, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"], "status": [{ "total": 4, "yiyue": 2 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 2 }]},
       { "id": 2, "chehao": "2号车", "chepai": "陕A12345", "jiaolian": "张教练", "total": 10, "yiyue": 0, "shijian": ["8:00-11:00", "11:00-14:00", "14:00-18:00"], "status": [{ "total": 4, "yiyue": 1 }, { "total": 3, "yiyue": 1 }, { "total": 3, "yiyue": 1 }]},

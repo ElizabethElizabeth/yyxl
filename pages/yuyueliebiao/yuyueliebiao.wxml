@@ -1,14 +1,14 @@
 <view class='view-page'>
   <view class='page-content' style='height:calc(100vh - {{navH}}px)'>
     <!--这里放你的内容-->
-    <text bindtap="navBack" class="fanhui"></text>
+    <!-- <text bindtap="navBack" class="fanhui"></text> -->
     <text class="title">{{pagename}}</text>
   </view>
 </view>
 
 
-  <picker class="sousuokuang" mode="date" start="2019-07-11" bindchange="bindDateChange">
-    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>请输入您要查询的日期<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>{{date}}
+  <picker class="sousuokuang" mode="date" bindchange="bindDateChange">
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text><text class='qing'>请选择您要查询的日期</text><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>{{date}}
   </picker>
 
   
@@ -19,7 +19,7 @@
     <text class="t3">教练</text>
     <text class="t4">已约/总数</text>
   </view>
-  <view wx:for="{{carList}}" wx:key="index"  bindtap="yuyuetiaozhuan" data-id="{{item.id}}" class="list">
+  <view wx:for="{{carList}}" wx:key="index"  bindtap="yuyuetiaozhuan" data-car_id="{{item.car_id}}" class="list">
       <text class="list1">{{item.car_name}}</text>
       <text class="list2">{{item.car_code}}</text>
       <text class="list3">{{item.coach}}</text>
