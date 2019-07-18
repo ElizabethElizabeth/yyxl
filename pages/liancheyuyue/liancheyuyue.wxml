@@ -34,7 +34,7 @@
         {{array[index]}}
     </picker>
   
-    <picker class='chehao1' mode="selector" bindchange='bindPickerChange1' value='{{carList[index1].car_id}}' range='{{carList}}' range-key="{{'car_name'}}">
+    <picker class='chehao1' mode="selector" bindchange='bindPickerChange1' value='{{index1}}' range='{{carList}}' range-key="{{'car_name'}}">
         {{carList[index1].car_name}}
     </picker>
 

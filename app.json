@@ -14,7 +14,6 @@
     "navigationBarTitleText": "亿陆驾",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,
-    "enableReachBottomRefresh": true,
     "backgroundColor": "#f0145a",
     "navigationStyle": "custom"
   },

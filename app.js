@@ -1,6 +1,15 @@
 //app.js
 App({
   onLaunch: function () {
+    // 获取手机系统信息
+    wx.getSystemInfo({
+      success: res => {
+        //导航高度
+        this.globalData.navHeight = res.statusBarHeight + 46;
+      }, fail(err) {
+        console.log(err);
+      }
+    })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -41,7 +50,7 @@ App({
                   var user_id = res.data.datas.user_id;
                   console.log(user_id);
                   wx.setStorage({
-                    key: 'yonghu',
+                    key: 'user_id',
                     data: user_id,      
                     success: function (res) {
                       wx.reLaunch({
@@ -81,6 +90,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    navHeight: 0,
     carList:[],
     is_user:'',
     yueList: [

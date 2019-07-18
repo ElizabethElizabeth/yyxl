@@ -1,5 +1,5 @@
 // pages/home/home.js
-const App = getApp();
+const app = getApp();
 Page({
 
   /**
@@ -25,10 +25,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let _this = this;
-    _this.setData({
-      navH: App.globalData.navHeight
-    })
+   
   },
 
   /**
