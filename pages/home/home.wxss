@@ -12,12 +12,10 @@
   text-align: center;
   margin-bottom: 5rpx;
 }
-.detailsImg{
+.details image{
+  width: 100%;
+  height: 382rpx;
   margin-top: 6rpx;
-  text-align: center;
-}
-.detailsImg image{
-  height: 190px;
 }
 
 

@@ -12,11 +12,13 @@ Page({
     inputValue: '', // 搜索的内容
     date: "",
     today:"",
-    xuanze:"inline"
+    xuanze:"inline",
+    xz:'none'
   },
   bindDateChange: function (e) {
     this.setData({
       xuanze: "none",
+      xz:"inline-block",
       date: e.detail.value
     })
     var DATE = util.formatDate(new Date());
@@ -154,6 +156,16 @@ Page({
         that.setData({
           carList: res.data.datas.carList
         })
+        var xb=res.data.datas.carList.length-1;
+        var tomorrow = res.data.datas.carList[xb].start_time.slice(0,10);
+        var cid = res.data.datas.carList[xb].car_id;
+        wx.setStorage({
+          key: 'huitiao',
+          data: {
+            tomorrow: tomorrow,
+            cid:cid
+          },
+        })
       },
       fail: function (err) {
 
@@ -192,7 +204,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.startPullDownRefresh()
+    wx.stopPullDownRefresh()
   },
 
   /**

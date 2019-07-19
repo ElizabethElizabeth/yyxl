@@ -8,7 +8,7 @@
 
 
   <picker class="sousuokuang" mode="date" bindchange="bindDateChange">
-    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text><text style="color:#ddd;display:{{xuanze}}">请选择您要查询的日期</text><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>{{date}}
+    <text style="display:inline-block;width:24%"></text><text style="display:{{xz}};width:14%"></text><text style="color:#ddd;display:{{xuanze}}">请选择您要查询的日期</text>{{date}}
   </picker>
 
   

@@ -111,14 +111,24 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log("日期发生改变，重新发送请求")
-        console.log(res.data)
+        console.log(res.data);
+      if (res.data.datas.detail == null) {
+        wx.showToast({
+          icon:'none',
+          title: '当前所选日期暂无车辆安排',
+          duration:3000,
+          mask: true
+        })
+      }else if(res.data.datas.detail.id){
         that.setData({
           car_code: res.data.datas.detail.car_code,
           coach: res.data.datas.detail.coach,
           c_num: res.data.datas.detail.c_num,
           t_num: res.data.datas.detail.t_num,
-          course_id : res.data.datas.detail.id
+          course_id: res.data.datas.detail.id
         })
+      } 
+          
         
       }
     })
@@ -203,8 +213,9 @@ Page({
       // var yue=app.globalData.carList.filter(elem=>elem.id==option.id)[0];
       // this.setData({yue});
        
-   
+    
   },
+
   querenyuyue: function () {
     var that=this;
     wx.getStorage({
@@ -295,7 +306,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.startPullDownRefresh()
+    wx.stopPullDownRefresh()
   },
 
   /**

@@ -7,13 +7,13 @@
 </view>  
 
 <view class='tab'>
-  <view>
-    <navigator class="tab-item active">
+  <view class="tabc">
+    <view class="tab-item active">
     练车预约
-    </navigator>
+    </view>
   </view>
-  <view>
-    <navigator class="tab-item">预约结果</navigator>
+  <view class="tabc">
+    <view class="tab-item">预约结果</view>
   </view>
 </view>
 
@@ -28,14 +28,14 @@
   </view>
 
     <picker class="riqi1" mode="date" start="2019-07-11" bindchange="bindDateChange">
-      {{date}}
+      {{date}}<text decode="{{true}}" space="{{true}}" style="display:inline-block;border-right:1rpx solid #aaa;position:absolute;top:0rpx;left:72%;">&nbsp;</text>
     </picker>
     <picker class="shijian1" mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        {{array[index]}}
+        {{array[index]}}<text decode="{{true}}" space="{{true}}" style="display:inline-block;position:absolute;top:0rpx;left:72%;border-right:1rpx solid #aaa;">&nbsp;</text>
     </picker>
   
     <picker class='chehao1' mode="selector" bindchange='bindPickerChange1' value='{{index1}}' range='{{carList}}' range-key="{{'car_name'}}">
-        {{carList[index1].car_name}}
+        {{carList[index1].car_name}}<text decode="{{true}}" space="{{true}}" style="display:inline-block;border-right:1rpx solid #aaa;position:absolute;top:0rpx;left:57%;">&nbsp;</text>
     </picker>
 
     <view class="zhuangtai1">

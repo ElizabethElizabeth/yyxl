@@ -53,11 +53,21 @@ Page({
         
       }
     })
-  
-    
     
   },
-
+  
+  huitiao: function () {
+    wx.getStorage({
+      key: 'huitiao',
+      success: function (res) {
+        var tomorrow = res.data.tomorrow;
+        var cid=res.data.cid;
+        wx.navigateTo({
+          url: `../liancheyuyue/liancheyuyue?date=${tomorrow}&car_id=${cid}`,
+        })
+      },
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -90,7 +100,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.startPullDownRefresh()
+    wx.stopPullDownRefresh()
   },
 
   /**
