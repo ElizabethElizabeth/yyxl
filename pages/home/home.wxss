@@ -2,9 +2,16 @@
 .details{
   padding: 20rpx 20rpx 6rpx 20rpx;
   font-family: 楷体;
-  font-size: 23rpx;
+  font-size: 27rpx;
 }
-
+.dtext{
+  font-size: 32rpx;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5rpx;
+}
 .detailsImg{
   display: flex;
   justify-content: space-between;
@@ -14,14 +21,7 @@
   width: 354rpx;
   height: 195rpx;
 }
-.dtext{
-  font-size: 27rpx;
-  font-weight: bold;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 5rpx;
-}
+
 
 .lunbo {
   width: 100%;

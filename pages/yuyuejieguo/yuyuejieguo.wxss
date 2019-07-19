@@ -26,16 +26,7 @@ page {
 .title {
   margin-left: 200rpx;
 }
-.fanhui {
-  position: absolute;
-  top: 9rpx;
-  left: 17rpx;
-  width: 20rpx;
-  height: 20rpx;
-  border-bottom: 7rpx solid #fff;
-  border-left: 7rpx solid #fff;
-  transform: rotate(45deg);
-}
+
 
 
 .tab{

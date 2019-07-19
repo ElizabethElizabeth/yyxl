@@ -18,7 +18,6 @@ Page({
     t_num: "",
     user_id:"",
     course_id:""
-    // yueList: app.globalData.yueList,
     // yue:{},
   },
   
@@ -202,11 +201,8 @@ Page({
     // })
     
       // var yue=app.globalData.carList.filter(elem=>elem.id==option.id)[0];
-      // console.log(yue);
       // this.setData({yue});
-      // this.setData({
-      //   array: this.data.yue.shijian
-      // })    
+       
    
   },
   querenyuyue: function () {
@@ -217,33 +213,44 @@ Page({
         that.setData({
           user_id : res.data,
         })
-        console.log(that.data.user_id, this.data.course_id)
+        wx.request({
+          url: 'https://c.16ylj.com/api/User/order.html?user_id=' + that.data.user_id + '&course_id=' + that.data.course_id,
+          header: {
+            "Content-Type": "applciation/json"
+          },
+          method: 'GET',
+          success: function (res) {
+            console.log(res.data)
+            if(res.data.datas==1){
+              wx.showToast({
+                icon:'success',
+                title: '预约成功',
+                duration: 6000,
+                success: function (res) {
+                  wx.navigateTo({
+                    url: '../yuyuejieguo/yuyuejieguo',
+                  })
+                }
+              })
+            }
+          },
+          fail: function (err) {
+
+          }
+        })   
       },
       fail (res) {
         console.log("失败了"+res)
       }  
     })
     
-    wx.request({
-      url: 'https://c.16ylj.com/api/User/order.html?user_id='+ that.data.user_id+'&course_id='+this.data.course_id,
-      header: {
-        "Content-Type": "applciation/json"
-      },
-      method: 'GET',
-      success: function (res) {
-        console.log(res.data)
-      },
-      fail: function (err) {
-
-      }
-    }) 
+    
+   
     
     
     
    
-    // wx.navigateTo({
-    //   url: '../yuyuejieguo/yuyuejieguo?chehao=' + this.data.yue.chehao + "&chepai=" + this.data.yue.chepai + "&jiaolian=" + this.data.yue.jiaolian + "&riqi=" + this.data.date + "&shijian=" + this.data.array[this.data.index] 
-    // })
+   
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -7,31 +7,54 @@ Page({
    */
   data: {
     pagename: "传益行科目二考场",
-    chehao:"",
-    chepai:"",
-    jiaolian:"",
-    zhuangtai:"",
-    shijian:"",
-    riqi:""
+    user_id:"",
+    order_detail:{},
+    riqi: "",
+    shijian: "",
   },
-  //回退
-  navBack: function () {
-    wx.navigateBack({
-      delta: 1
-    })
-  },
+ 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option) {
-    this.setData({
-      chehao: option.chehao,
-      chepai: option.chepai,
-      jiaolian: option.jiaolian,
-      zhuangtai: option.zhuangtai,
-      riqi: option.riqi,
-      shijian: option.shijian
+    var that=this;
+    wx.getStorage({
+      key: 'user_id',
+      success(res) {
+        that.setData({
+          user_id: res.data,
+        })
+        wx.request({
+          url: 'https://c.16ylj.com/api/User/order_detail.html?user_id=' + that.data.user_id,
+          header: {
+            "Content-Type": "applciation/json"
+          },
+          method: 'GET',
+          success: function (res) {
+            console.log(res.data)
+            that.setData({
+              order_detail: res.data.datas.order_detail
+            })
+            var riqi=that.data.order_detail.start_time.slice(0,10)
+            var st=that.data.order_detail.start_time.slice(11,16)
+            var et = that.data.order_detail.end_time.slice(11, 16)     
+            var shijian=st+"-"+et           
+            that.setData({
+              riqi: riqi,
+              shijian: shijian,
+            }) 
+          },
+          fail: function (err) {
+
+          }
+        })   
+      },
+      fail(res) {
+        
+      }
     })
+  
+    
     
   },
 
@@ -39,7 +62,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**

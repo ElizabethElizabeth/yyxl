@@ -4,9 +4,7 @@
     "pages/yuyueliebiao/yuyueliebiao",
     "pages/zhuce/zhuce",
     "pages/yuyuejieguo/yuyuejieguo",
-    "pages/index/index",
     "pages/liancheyuyue/liancheyuyue"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,7 +16,7 @@
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "color": "black",
+    "color": "#000",
     "selectedColor": "#ffb20f",
     "borderStyle": "white",
     "backgroundColor": "#ddd",

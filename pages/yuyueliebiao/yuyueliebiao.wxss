@@ -126,6 +126,3 @@ page {
   width: 25.5%;
   text-align: center;
 }
-.qing{
-  color: #ccc;
-}

@@ -52,7 +52,7 @@ Page({
             showCancel: false,
             success: function (res) {
               wx.switchTab({
-                url: '../home/home',
+                url: '../yuyueliebiao/yuyueliebiao',
               })
             }
           })
