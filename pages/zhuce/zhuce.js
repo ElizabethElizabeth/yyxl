@@ -17,11 +17,12 @@ Page({
   },
   
   zhuce: function(){
+    var that=this;
     wx.request({
       url: 'https://c.16ylj.com/api/User/register.html',
       data:{
-        key: this.data.key,
-        user_code: this.data.user_code
+        key: that.data.key,
+        user_code: that.data.user_code
       },
       header: {
         'content-type': 'application/json'
@@ -41,7 +42,7 @@ Page({
           var user_id = res.data.datas.user_id;
           console.log(user_id);
           wx.setStorage({
-            key: 'yonghu',
+            key: 'user_id',
             data: user_id,
             success: function (res) {
             }
@@ -51,7 +52,7 @@ Page({
             content: "注册成功！",
             showCancel: false,
             success: function (res) {
-              wx.switchTab({
+              wx.reLaunch({
                 url: '../yuyueliebiao/yuyueliebiao',
               })
             }

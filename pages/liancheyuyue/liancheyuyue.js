@@ -225,13 +225,24 @@ Page({
               wx.showToast({
                 icon:'success',
                 title: '预约成功',
-                duration: 6000,
+                duration: 3000,
+                mask:true,
                 success: function (res) {
-                  wx.navigateTo({
-                    url: '../yuyuejieguo/yuyuejieguo',
-                  })
+                  setTimeout(function(){
+                    wx.navigateTo({
+                      url: '../yuyuejieguo/yuyuejieguo',
+                    })
+                  },3000)                  
                 }
               })
+            }else if(res.data.datas.error){
+              var error=res.data.datas.error;
+              wx.showToast({
+                title: error,
+                icon: 'none',
+                duration:4000
+              })
+    
             }
           },
           fail: function (err) {

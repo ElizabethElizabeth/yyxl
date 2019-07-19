@@ -21,9 +21,11 @@
 <view class='details'>
   <text class='dtext'>公司介绍</text>
   <view><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>陕西汇驾网络科技有限公司由西安享双创企业管理有限公司出资创建，下设西安渤海驾驶员培训有限公司、西安亿路驾驾驶员培训有限公司、西安亿路驾驾驶员考训服务有限公司、西安盈同驾驶员培训有限公司，总投资6100万，400家直营报名联络点遍布西安市城6区，教练车400余辆，年培训能力约8.7万人次。</view>
+  <view class='detailsImg'> 
+    <image mode="aspectFit" src='/img/left.jpg'></image>
+  </view> 
   <view class='detailsImg'>
-    <image src='/img/left.jpg'></image>
-    <image src='/img/right.jpg'></image>
+    <image mode="aspectFit" src='/img/right.jpg'></image>
   </view> 
 </view>
 

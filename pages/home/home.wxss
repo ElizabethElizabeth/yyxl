@@ -1,11 +1,11 @@
 
 .details{
-  padding: 20rpx 20rpx 6rpx 20rpx;
+  padding: 20rpx 36rpx 6rpx 36rpx;
   font-family: 楷体;
-  font-size: 27rpx;
+  font-size: 30rpx;
 }
 .dtext{
-  font-size: 32rpx;
+  font-size: 35rpx;
   font-weight: bold;
   display: block;
   margin: 0 auto;
@@ -13,13 +13,11 @@
   margin-bottom: 5rpx;
 }
 .detailsImg{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12rpx;
+  margin-top: 6rpx;
+  text-align: center;
 }
 .detailsImg image{
-  width: 354rpx;
-  height: 195rpx;
+  height: 190px;
 }
 
 

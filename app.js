@@ -1,25 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        var code = res.code;
-        if (code) {
-          console.log('获取用户登录凭证：' + code);
-          wx.setStorage({
-            key: 'code',
-            data: code,
-            success: function (res) {
-              
-            }
-          })
-        } else {
-          console.log('获取用户登录态失败：' + res.errMsg);
-        }
-      }
-    })
+
 
     // 获取手机系统信息
     wx.getSystemInfo({

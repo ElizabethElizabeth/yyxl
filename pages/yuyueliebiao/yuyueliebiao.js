@@ -92,46 +92,54 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
     var that=this;
-    wx.getStorage({
-      key: 'code',
-      success: function(res) {
-        // --------- 发送凭证 ------------------
-        var code=res.data;
-        wx.request({
-          url: 'https://c.16ylj.com/api/User/login.html?code=' + code,
-          data: { code: code },
-          header: {
-            'content-type': 'application/json'
-          },
-          success: (res) => {
-            let key = res.data.datas.key;
-            if (res.data.datas.is_user == 0) {
-              wx.showModal({
-                content: '还未注册,请先前往注册',
-                showCancel: false,
-                success: function (res) {
-                  wx.redirectTo({
-                    url: '/pages/zhuce/zhuce?key=' + key,
-                  })
-                }
-              })
-            } else {
-              var user_id = res.data.datas.user_id;
-              wx.setStorage({
-                key: 'user_id',
-                data: user_id,
-                success: function (res) {
-                  that.getData();
-                }
-              })
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        var code = res.code;
+        if (code) {
+          console.log('获取用户登录凭证：' + code);
+          // --------- 发送凭证 ------------------
+          wx.request({
+            url: 'https://c.16ylj.com/api/User/login.html',
+            data: { code: code },
+            header: {
+              'content-type': 'application/json'
+            },
+            success: (res) => {
+              console.log(res.data);
+              var key = res.data.datas.key;
+              if (res.data.datas.is_user == 0) {
+                wx.showModal({
+                  content: '还未注册,请先前往注册',
+                  showCancel: false,
+                  success: function (res) {
+                    wx.redirectTo({
+                      url: '/pages/zhuce/zhuce?key=' + key,
+                    })
+                  }
+                })
+              } else {
+                var user_id = res.data.datas.user_id;
+                wx.setStorage({
+                  key: 'user_id',
+                  data: user_id,
+                  success: function (res) {
+                    that.getData();
+                  }
+                })
+              }
             }
-          }
-        })
-      },
+          })
+        } else {
+          console.log('获取用户登录态失败：' + res.errMsg);
+        }
+      }
     })
-            
+   
+       
+    
   },
   getData: function () {
     var that = this;

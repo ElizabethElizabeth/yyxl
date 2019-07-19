@@ -8,12 +8,12 @@
 
 <view class='tab'>
   <view>
-    <navigator url="../liancheyuyue/liancheyuyue" class="tab-item">
+    <navigator class="tab-item">
     练车预约
     </navigator>
   </view>
   <view>
-    <navigator url="../yuyuejieguo/yuyuejieguo" class="tab-item active">预约结果</navigator>
+    <navigator class="tab-item active">预约结果</navigator>
   </view>
 </view>
 
