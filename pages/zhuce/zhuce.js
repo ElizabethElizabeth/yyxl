@@ -103,10 +103,19 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.startPullDownRefresh()
-    wx.stopPullDownRefresh()
-  },
+    // wx.startPullDownRefresh()
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading'
+    })
+    wx.showNavigationBarLoading()
+    setTimeout(
+      function () {
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+      }, 1500)
 
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
