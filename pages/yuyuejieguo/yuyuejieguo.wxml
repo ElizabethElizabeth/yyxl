@@ -1,10 +1,9 @@
 <view class='view-page'>
   <view class='page-content' style='height:calc(100vh - {{navH}}px)'>
-    <!--这里放你的内容-->
+    <image src="../../img/fanhui.png" bindtap="navBack" class="fanhui"></image>
     <text class="title">{{pagename}}</text>
   </view>
 </view>  
-
 
 <view class='tab'>
   <view class="tabc" bindtap="huitiao">
@@ -18,7 +17,7 @@
 </view>
 
 
-<view class="body">
+<view class="body" style="display:{{display}}">
   <view class="list">
     <view class="chehao"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>号： </text><text class="chehao1">{{order_detail.car_name}}</text></view>
     <view class="chepai"><text>车<text decode="{{true}}" space="{{true}}">&ensp;&ensp;&ensp;&ensp;</text>牌： </text><text class="chepai1">{{order_detail.car_code}}</text></view>
@@ -28,4 +27,14 @@
     <view class="zhuangtai"><text>预约状态：</text><text class="zhuangtai1">{{order_detail.course_info.c_num}}/{{order_detail.course_info.t_num}}</text></view>
   </view>
   <view class="chenggong">您已成功预约传益行科目二考场练车请按时前来参加训练！</view>
+
+
+  <view class="quxiao">取消预约</view>
+</view>
+
+
+
+
+<view style="display:{{display1}}">
+    <view style="width:100%;text-align:center;margin-top:50%">暂无预约结果</view>
 </view>

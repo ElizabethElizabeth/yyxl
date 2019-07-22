@@ -1,3 +1,4 @@
 {
-  "usingComponents": {"navbar":"../../components/navbar/navbar"}
+  "usingComponents": {"navbar": "../../components/navbar/navbar"},
+  "enablePullDownRefresh":true
 }

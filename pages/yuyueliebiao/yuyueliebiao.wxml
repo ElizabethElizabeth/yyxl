@@ -1,14 +1,12 @@
 <view class='view-page'>
   <view class='page-content' style='height:calc(100vh - {{navH}}px)'>
-    <!--这里放你的内容-->
-    <!-- <text bindtap="navBack" class="fanhui"></text> -->
     <text class="title">{{pagename}}</text>
   </view>
-</view>
+</view>  
 
 
   <picker class="sousuokuang" mode="date" bindchange="bindDateChange">
-    <text style="display:inline-block;width:24%"></text><text style="display:{{xz}};width:14%"></text><text style="color:#ddd;display:{{xuanze}}">请选择您要查询的日期</text>{{date}}
+    <text style="display:inline-block;width:22%"></text><text style="display:{{xz}};width:14%"></text><text style="color:#ddd;display:{{xuanze}}">请选择您要查询的日期</text>{{date}}
   </picker>
 
   

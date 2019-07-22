@@ -6,26 +6,37 @@ page {
 .view-page {
   height: 135rpx;
   width: 100%;
+  position: fixed;
   left: 0;
   top: 0;
   box-sizing: border-box;
   overflow: hidden;
-  background: linear-gradient(to right, rgb(255, 123, 25), rgb(255, 249, 1));
+  background: linear-gradient(to right,rgb(255,123,25),rgb(255,249,1));
 }
 .page-content {
   box-sizing: border-box;
   position: relative;
   overflow-y: auto;
+  height: 50rpx;
   color: #fff;
   font-family: 宋体;
   font-size: 36rpx;
   font-weight: bold;
-  top: 70rpx;
+  top: 65rpx;
   left: 30rpx;
+  margin-bottom: 20rpx;
 }
-.title {
+.title{
   margin-left: 200rpx;
+  line-height: 50rpx;
 }
+.fanhui{
+  position: absolute;
+  top: 0rpx;left: 0rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
 
 
 
@@ -34,8 +45,9 @@ page {
   font-size: 32rpx;
   color:#000000;
   background: #f4f4f4;
+  margin-top: 135rpx;
 }
-.tab view{
+.tabc{
   width: 49.9%;
 }
 .tab-item{
@@ -93,4 +105,12 @@ page {
   width: 65%;
   text-align: center;
   margin: 0% 17.5%;
+}
+.quxiao{
+  font-size: 27rpx;
+  color: #999;
+  text-align: center;
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 200rpx;
 }

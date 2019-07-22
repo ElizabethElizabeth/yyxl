@@ -6,31 +6,37 @@ page {
 .view-page {
   height: 135rpx;
   width: 100%;
+  position: fixed;
   left: 0;
   top: 0;
   box-sizing: border-box;
   overflow: hidden;
-  background: linear-gradient(to right, rgb(255, 123, 25), rgb(255, 249, 1));
+  background: linear-gradient(to right,rgb(255,123,25),rgb(255,249,1));
 }
 .page-content {
   box-sizing: border-box;
   position: relative;
   overflow-y: auto;
+  height: 50rpx;
   color: #fff;
   font-family: 宋体;
   font-size: 36rpx;
   font-weight: bold;
-  top: 70rpx;
+  top: 65rpx;
   left: 30rpx;
+  margin-bottom: 20rpx;
 }
-.title {
-  margin-left: 275rpx;
+.title{
+  margin-left: 200rpx;
+  line-height: 50rpx;
 }
+
 
 .ziliao{
   display: block;
   width: 84%;
-  margin: 30rpx auto;
+  margin: 165rpx auto;
+  margin-bottom: 0rpx;
 }
 .zhuce{
   background: linear-gradient(to right, rgb(255, 123, 25), rgb(255, 249, 1));

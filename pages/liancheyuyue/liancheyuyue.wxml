@@ -1,7 +1,6 @@
 <view class='view-page'>
   <view class='page-content' style='height:calc(100vh - {{navH}}px)'>
-    <!--这里放你的内容-->
-    <text bindtap="navBack" class="fanhui"></text>
+    <image src="../../img/fanhui.png" bindtap="navBack" class="fanhui"></image>
     <text class="title">{{pagename}}</text>
   </view>
 </view>  
@@ -13,7 +12,7 @@
     </view>
   </view>
   <view class="tabc">
-    <view class="tab-item">预约结果</view>
+    <navigator class="tab-item" url="../yuyuejieguo/yuyuejieguo" class="tab-item">预约结果</navigator>
   </view>
 </view>
 
@@ -39,8 +38,8 @@
     </picker>
 
     <view class="zhuangtai1">
-        {{c_num}}/{{t_num}}
+        {{zhuangtai}}
     </view> 
-  <navigator bindtap="querenyuyue">确认预约</navigator>
+  <navigator class="queren" bindtap="querenyuyue" disabled="{{jinyong}}">确认预约</navigator>
 </view>
 

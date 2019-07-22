@@ -1,10 +1,8 @@
 <view class='view-page'>
   <view class='page-content' style='height:calc(100vh - {{navH}}px)'>
-    <!--这里放你的内容-->
     <text class="title">{{pagename}}</text>
   </view>
 </view>  
-
 
 <view class='ziliao'>
   <view class='biaoti'>资料填写：</view>

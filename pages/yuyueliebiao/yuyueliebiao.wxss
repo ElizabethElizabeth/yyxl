@@ -6,38 +6,32 @@ page {
 .view-page {
   height: 135rpx;
   width: 100%;
+  position: fixed;
   left: 0;
   top: 0;
   box-sizing: border-box;
-  /* position: absolute; */
   overflow: hidden;
   background: linear-gradient(to right,rgb(255,123,25),rgb(255,249,1));
 }
-
 .page-content {
   box-sizing: border-box;
   position: relative;
   overflow-y: auto;
+  height: 50rpx;
   color: #fff;
   font-family: 宋体;
   font-size: 36rpx;
   font-weight: bold;
-  top: 70rpx;
+  top: 65rpx;
   left: 30rpx;
+  margin-bottom: 20rpx;
+}
+.title{
+  margin-left: 200rpx;
+  line-height: 50rpx;
 }
 
-.title{
-  margin-left: 200rpx
-}
-/* .fanhui{
-  position: absolute;
-  top: 9rpx;left: 17rpx;
-  width: 20rpx;
-  height: 20rpx;
-  border-bottom: 7rpx solid #fff;
-  border-left: 7rpx solid #fff;
-  transform: rotate(45deg);
-} */
+
 .list{
   margin-bottom: 20rpx;
   border: 1rpx solid #ddd;
@@ -84,7 +78,7 @@ page {
   height:72rpx;
   line-height: 72rpx;
   background-color:whitesmoke;
-  margin-top: 4%;
+  margin-top: 155rpx;
   margin-bottom: 3%;
   border:1rpx solid whitesmoke;
   border-radius: 17rpx;

@@ -109,11 +109,6 @@ Component({
         delta: 1
       })
     },
-    //回主页
-    toIndex: function () {
-      wx.navigateTo({
-        url: '/pages/home/home'
-      })
-    },
+    
   }
 })
