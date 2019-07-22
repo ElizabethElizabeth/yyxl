@@ -19,9 +19,13 @@ Page({
     t_num: "",
     user_id:"",
     course_id:"",
+
     today:"",
     jinyong:false,
-    zhuangtai:""
+    zhuangtai:"",
+
+    today:""
+
     // yue:{},
   },
   
@@ -55,9 +59,14 @@ Page({
           that.setData({
             car_code: res.data.datas.detail.car_code,
             coach: res.data.datas.detail.coach,
+
             // c_num: res.data.datas.detail.c_num,
             // t_num: res.data.datas.detail.t_num,
             zhuangtai: res.data.datas.detail.c_num + "/" + res.data.datas.detail.t_num,
+
+            c_num: res.data.datas.detail.c_num,
+            t_num: res.data.datas.detail.t_num,
+
             course_id: res.data.datas.detail.id
           })
         } 
@@ -150,6 +159,7 @@ Page({
               duration:3000,
               mask: true
             })
+
             that.setData({
               jinyong: true
             })
@@ -162,6 +172,13 @@ Page({
               // c_num: res.data.datas.detail.c_num,
               // t_num: res.data.datas.detail.t_num,
               zhuangtai: res.data.datas.detail.c_num + "/" + res.data.datas.detail.t_num,
+            })
+          }else if(res.data.datas.detail.id){
+            that.setData({
+              car_code: res.data.datas.detail.car_code,
+              coach: res.data.datas.detail.coach,
+              c_num: res.data.datas.detail.c_num,
+              t_num: res.data.datas.detail.t_num,
               course_id: res.data.datas.detail.id
             })
           } 
