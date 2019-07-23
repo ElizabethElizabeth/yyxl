@@ -107,10 +107,17 @@ page {
   margin: 0% 17.5%;
 }
 .quxiao{
-  font-size: 27rpx;
+  font-size: 31rpx;
   color: #999;
   text-align: center;
   width: 20%;
   margin: 0 auto;
   margin-top: 200rpx;
+}
+.shuoming{
+  font-size: 27rpx;
+  color: #999;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10rpx;
 }

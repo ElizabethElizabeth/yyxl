@@ -14,7 +14,7 @@
 }
 .details image{
   width: 100%;
-  height: 382rpx;
+  /* height: 382rpx; */
   margin-top: 6rpx;
 }
 

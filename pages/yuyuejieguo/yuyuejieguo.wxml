@@ -30,6 +30,8 @@
 
 
   <view class="quxiao" bindtap="quxiao">取消预约</view>
+  <view class="shuoming">（请提前8个小时取消预约）</view>
+  
 </view>
 
 

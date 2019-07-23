@@ -201,10 +201,11 @@ Page({
   },
 
   //回退
-  navBack: function () {
-    wx.navigateBack({
-      delta: 1
-    })
+  navBack: function () {    
+    wx.switchTab({
+      url: '../yuyueliebiao/yuyueliebiao'
+    })    
+   
   },
   /**
    * 生命周期函数--监听页面加载

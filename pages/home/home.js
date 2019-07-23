@@ -7,9 +7,11 @@ Page({
    */
   data: {
     "imgUrl": [
-      "https://c.16ylj.com/img/banner1.png",
-      "https://c.16ylj.com/img/banner2.jpg",
-      "https://c.16ylj.com/img/banner3.jpg"
+      "https://c.16ylj.com/img/daoku.jpg",
+      "https://c.16ylj.com/img/cefang.jpg",
+      "https://c.16ylj.com/img/banpo.jpg",
+      "https://c.16ylj.com/img/zhijiao.jpg",
+      "https://c.16ylj.com/img/swan.jpg"
     ],
     imgUrl1: ["https://c.16ylj.com/img/pic1.jpg"],
     imgUrl2: ["https://c.16ylj.com/img/pic2.jpg"],

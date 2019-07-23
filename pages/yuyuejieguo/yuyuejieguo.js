@@ -53,9 +53,28 @@ Page({
                       content: '您已成功取消预约',
                       showCancel: false,
                       success: function (res) {
-
+                        if(res.confirm){
+                          wx.showLoading()
+                          setTimeout(function () {
+                            wx.hideLoading({
+                              success(res) {
+                                // 设置让页面刷新成暂无预约页
+                                that.setData({
+                                  display: "none",
+                                  display1: "block"
+                                })
+                              }
+                            })
+                          }, 1000)
+                        }
                       },
                       fail: function (res) { }
+                    })
+                  }else{
+                    wx.showToast({
+                      title: '抱歉，您已不能取消预约',
+                      icon: 'none',
+                      duration:2000
                     })
                   }
 

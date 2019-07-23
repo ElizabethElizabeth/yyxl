@@ -8,14 +8,16 @@
 
 
 <swiper class='lunbo' autoplay='true' interval='{{interval}}' duration='1000' circular='true'>
+  <swiper-item>
+    <video object-fit="fill" poster="https://c.16ylj.com/img/fengmian.png" bindpause="pause" bindplay="play" bindfullscreenchange="fullscreen" src='{{shipin}}' play-btn-position="center" enable-play-gesture="true"  controls='true' vslide-gesture='true' direction="-90" show-mute-btn class="video"></video>
+  </swiper-item>
+
   <block wx:for="{{imgUrl}}" wx:key="index">
     <swiper-item>
       <image src='{{item}}' data-src="{{item}}" bindtap="previewImage" class='u-img-slide' mode='aspectFill'></image>
     </swiper-item>
   </block>
-    <swiper-item>
-      <video object-fit="fill" poster="https://c.16ylj.com/img/fengmian.png" bindpause="pause" bindplay="play" bindfullscreenchange="fullscreen" src='{{shipin}}' play-btn-position="center" enable-play-gesture="true"  controls='true' vslide-gesture='true' direction="-90" show-mute-btn class="video"></video>
-    </swiper-item>
+   
 
 </swiper>
 
@@ -27,7 +29,7 @@
   <view><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>陕西汇驾网络科技有限公司由西安享双创企业管理有限公司出资创建，下设西安渤海驾驶员培训有限公司、西安亿路驾驾驶员培训有限公司、西安亿路驾驾驶员考训服务有限公司、西安盈同驾驶员培训有限公司，总投资6100万，400家直营报名联络点遍布西安市城6区，教练车400余辆，年培训能力约8.7万人次。</view>
   <image mode='aspectFill' bindtap="previewImage1" src='https://c.16ylj.com/img/pic1.jpg'></image>
   <view><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>公司始终坚持把“向社会输送合格的驾驶人”作为己任，把“学员满意”作为唯一标准，坚持采用“伙伴式的教学”、“服务与您的需求同步”等全新理念。形成了“服务遵章、团结、自律、创新”促进公司建设与发展的方针。在行业内坚决杜绝行业不正之风，坚决维护学员利益，为提升整个驾驶员培训行业的从业者素质和管理水平积累了宝贵的经验。</view>
-  <image bindtap="previewImage2"  src='https://c.16ylj.com/img/pic2.jpg'></image>
+  <image mode='aspectFill' bindtap="previewImage2"  src='https://c.16ylj.com/img/pic2.jpg'></image>
   <view><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>公司积极向汽车消费综合服务行业的其他子行业拓展业务，如汽车维修、汽车金融、汽车美容、自驾营训练、新手驾驶陪练、汽车保险、新车团购、二手车评估及交易、汽车租赁、代培代驾等相关后市场车辆业务等。</view>
 </view>
 
