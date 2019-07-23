@@ -15,6 +15,70 @@ Page({
     display:"block",
     display1:"none"
   },
+  // 取消预约
+  quxiao: function(){
+    var that = this;
+    wx.showModal({
+      title: '取消预约',
+      content: '确认取消预约吗？',
+      success: function (res) {
+        if (res.confirm) {
+          var order_id = that.data.order_detail.id;
+          wx.getStorage({
+            key: 'user_id',
+            success: function (res) {
+              var user_id = res.data;
+              wx.request({
+                url: 'https://c.16ylj.com/api/User/cancel_order.html',
+                data: {
+                  order_id: order_id,
+                  user_id: user_id
+                },
+                header: {
+                  "Content-Type": "applciation/json"
+                },
+                method: 'GET',
+                success: function (res) {
+                  console.log(res.data)
+                  if (res.data.datas == 1) {
+                    // 清除缓存
+                    wx.removeStorage({
+                      key: 'wodeyiyue',
+                      success: function (res) {
+                        console.log(res.data)
+                      }
+                    })
+                    wx.showModal({
+                      title: '取消预约',
+                      content: '您已成功取消预约',
+                      showCancel: false,
+                      success: function (res) {
+
+                      },
+                      fail: function (res) { }
+                    })
+                  }
+
+                },
+                fail: function (err) {
+
+                }
+              })
+            },
+          })
+        }
+
+      },
+      fail: function (res) { }
+    })
+
+
+
+      
+      
+  },
+
+
   //回退
   navBack: function () {
     wx.navigateBack({
@@ -25,18 +89,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option) {
+   
     var that = this;
-    var optionyes=option.yes;
+    
     wx.getStorage({
       key: 'wodeyiyue',
       success: function(res) {
         var wodeyiyue=res.data;
-        if (!optionyes && wodeyiyue !== 999) {
-          that.setData({
-            display: "none",
-            display1: "block"
-          })
-        } else {
+        console.log(wodeyiyue);
+        if (wodeyiyue == 999) {
           wx.getStorage({
             key: 'user_id',
             success(res) {
@@ -72,8 +133,17 @@ Page({
 
             }
           })
+          
+        } else {
+         
         }
       },
+      fail(res){
+        that.setData({
+          display: "none",
+          display1: "block"
+        })
+      }
     })
    
   },

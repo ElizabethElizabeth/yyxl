@@ -126,7 +126,7 @@ Page({
     // 日期改变，重新渲染页面
     if (that.data.date > that.data.today) {
     wx.request({
-      url: 'http://c.16ylj.com/api/User/carList.html?date=' + this.data.date,//请求地址
+      url: 'https://c.16ylj.com/api/User/carList.html?date=' + this.data.date,//请求地址
       header: {
         "Content-Type": "applciation/json"
       },
@@ -221,7 +221,7 @@ Page({
     var that = this;
     // 从后台获取数组来渲染车号的下拉框
     wx.request({
-      url: 'http://c.16ylj.com/api/User/carList.html?date='+this.data.date,//请求地址
+      url: 'https://c.16ylj.com/api/User/carList.html?date='+this.data.date,//请求地址
       header: {
         "Content-Type": "applciation/json"
       },
@@ -324,6 +324,10 @@ Page({
             method: 'GET',
             success: function (res) {
               console.log(res.data)
+              wx.setStorage({
+                key: 'wodeyiyue',
+                data: 999,
+              })
               if(res.data.datas==1){
                 wx.showToast({
                   icon:'success',
@@ -331,13 +335,10 @@ Page({
                   duration: 3000,
                   mask:true,
                   success: function (res) {
-                    wx.setStorage({
-                      key: 'wodeyiyue',
-                      data: 999,
-                    })
+                    
                     setTimeout(function(){
                       wx.navigateTo({
-                        url: '../yuyuejieguo/yuyuejieguo?yes=yes',
+                        url: '../yuyuejieguo/yuyuejieguo',
                       })
                     },3000)                  
                   }

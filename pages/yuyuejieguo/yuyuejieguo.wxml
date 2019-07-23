@@ -29,7 +29,7 @@
   <view class="chenggong">您已成功预约传益行科目二考场练车请按时前来参加训练！</view>
 
 
-  <view class="quxiao">取消预约</view>
+  <view class="quxiao" bindtap="quxiao">取消预约</view>
 </view>
 
 

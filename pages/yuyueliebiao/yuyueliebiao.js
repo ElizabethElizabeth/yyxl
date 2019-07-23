@@ -20,16 +20,12 @@ Page({
       xuanze: "none",
       xz:"inline-block",
       date: e.detail.value
-    })
-    var DATE = util.formatDate(new Date());
-    this.setData({
-      today: DATE,
-    });
+    }) 
     var that = this;
-    console.log(that.data.date+"和"+that.data.today)
+    console.log(this.data.date+"和"+that.data.today)
     if(that.data.date>that.data.today){
       wx.request({
-        url: 'http://c.16ylj.com/api/User/carList.html?date=' + this.data.date,//请求地址
+        url: 'https://c.16ylj.com/api/User/carList.html?date=' + this.data.date,//请求地址
         header: {
           "Content-Type": "applciation/json"
         },
@@ -94,7 +90,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    var that = this;
+    var DATE = util.formatDate(new Date());
+    that.setData({
+      today: DATE,
+    });
+    
     // 登录
     wx.login({
       success: res => {
@@ -146,7 +147,7 @@ Page({
   getData: function () {
     var that = this;
     wx.request({
-      url: 'http://c.16ylj.com/api/User/carList.html',//请求地址
+      url: 'https://c.16ylj.com/api/User/carList.html',//请求地址
       header: {
         "Content-Type": "applciation/json"
       },
@@ -183,9 +184,59 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
-  },
+    var that=this;
+    var date=that.data.date;
+    var today=that.data.today;
+    console.log(date + "和" + today)
+    if(date==""){
+      wx.getStorage({
+        key: 'huitiao',
+        success: function(res) {
+          var date=res.data.tomorrow;
+          console.log(date + "和" + today)
+          if (date > today) {
+            wx.request({
+              url: `https://c.16ylj.com/api/User/carList.html?date=${date}`,//请求地址
+              header: {
+                "Content-Type": "applciation/json"
+              },
+              method: 'GET',
+              success: function (res) {
+                console.log(res.data)
+                that.setData({
+                  carList: res.data.datas.carList
+                })
 
+
+              },
+              fail: function (err) {
+
+              }
+            })
+          }
+        },
+      })
+    }else{
+      wx.request({
+        url: 'https://c.16ylj.com/api/User/carList.html?date='+that.data.date,//请求地址
+        header: {
+          "Content-Type": "applciation/json"
+        },
+        method: 'GET',
+        success: function (res) {
+          console.log(res.data)
+          that.setData({
+            carList: res.data.datas.carList
+          })
+
+
+        },
+        fail: function (err) {
+
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
