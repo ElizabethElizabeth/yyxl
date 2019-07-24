@@ -143,7 +143,7 @@ Page({
   onPullDownRefresh: function () {
     // wx.startPullDownRefresh()
     wx.showToast({
-      // title: '加载中...',
+      title: '加载中...',
       icon: 'loading'
     })
     wx.showNavigationBarLoading()

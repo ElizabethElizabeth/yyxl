@@ -12,8 +12,8 @@ Page({
     riqi: "",
     shijian: "",
     wodeyiyue:0,
-    display:"block",
-    display1:"none"
+    display:"none",
+    display1:"display"
   },
   // 取消预约
   quxiao: function(){
@@ -54,11 +54,13 @@ Page({
                       showCancel: false,
                       success: function (res) {
                         if(res.confirm){
-                          wx.showLoading()
+                          wx.showLoading({
+                            title: '加载中...'
+                          })
                           setTimeout(function () {
                             wx.hideLoading({
                               success(res) {
-                                // 设置让页面刷新成暂无预约页
+                                // 取消预约成功后设置让页面刷新成暂无预约页
                                 that.setData({
                                   display: "none",
                                   display1: "block"
@@ -108,15 +110,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option) {
-   
     var that = this;
-    
     wx.getStorage({
       key: 'wodeyiyue',
       success: function(res) {
         var wodeyiyue=res.data;
         console.log(wodeyiyue);
         if (wodeyiyue == 999) {
+          that.setData({
+            display: "block",
+            display1: "none"
+          })
           wx.getStorage({
             key: 'user_id',
             success(res) {
@@ -158,6 +162,7 @@ Page({
         }
       },
       fail(res){
+        console.log("并没有预约过")
         that.setData({
           display: "none",
           display1: "block"
