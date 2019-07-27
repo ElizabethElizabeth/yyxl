@@ -213,7 +213,6 @@ Page({
   
   onLoad: function (option,e) {
     var DATE = util.formatDate(new Date());
-
     this.setData({
       car_id: option.car_id,
       date: option.date,

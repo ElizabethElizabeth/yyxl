@@ -3,6 +3,7 @@
   padding: 20rpx 36rpx 6rpx 36rpx;
   font-family: 楷体;
   font-size: 30rpx;
+  margin-bottom: 120rpx;
 }
 .dtext{
   font-size: 35rpx;
