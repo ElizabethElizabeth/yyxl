@@ -18,6 +18,7 @@ Page({
   
   zhuce: function(){
     var that=this;
+    // 注册填写身份证时可以用33或44或55或66
     wx.request({
       url: 'https://c.16ylj.com/api/User/register.html',
       data:{
